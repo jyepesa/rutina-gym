@@ -11,7 +11,6 @@ export const SelectorDia = ({
 
   return (
     <div className="mb-8">
-      {/* 1. EL GRID: Solo para los números de los días */}
       <div className="grid grid-cols-4 gap-2">
         {state.map((item, index) => {
           const indiceSeleccionado = indice === index;
