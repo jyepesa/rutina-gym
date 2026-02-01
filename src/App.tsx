@@ -14,10 +14,18 @@ const AppWrapping = () => {
 
 const App = () => {
   const [indiceActivo, setIndiceActivo] = useState<number | null>(null);
+  const [ultimoIndice, setUltimoIndice] = useState<number | null>(() => {
+    const guardado = localStorage.getItem("ultimoIndice");
+    return guardado ? Number(guardado) : null;
+  });
 
   const { state } = useGym();
 
   function manejarSeleccionDia(idx: number | null) {
+    if (indiceActivo !== null && idx !== indiceActivo) {
+      setUltimoIndice(indiceActivo);
+      localStorage.setItem("ultimoIndice", indiceActivo.toString());
+    }
     setIndiceActivo(idx);
   }
 
@@ -30,6 +38,11 @@ const App = () => {
         <p className="text-slate-500 text-sm mt-1">
           Rutina de {state.length} sesiones a lo largo de 2 semanas
         </p>
+        {!indiceActivo && (ultimoIndice || ultimoIndice === 0) && (
+          <p className="text-slate-500 text-sm mt-1">
+            Último entrenamiento: día {ultimoIndice + 1}
+          </p>
+        )}
       </header>
 
       <main className="max-w-md mx-auto">
