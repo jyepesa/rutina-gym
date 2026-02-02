@@ -1,5 +1,5 @@
 import { GymProvider } from "./context/GymContext";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { SelectorDia } from "./componentes/SelectorDia";
 import { DetallesEntrenamiento } from "./componentes/DetallesEntrenamiento";
 import { useGym } from "./hooks/useGym";
@@ -21,14 +21,18 @@ const App = () => {
 
   const { state } = useGym();
 
-  function manejarSeleccionDia(idx: number | null) {
-    if (indiceActivo !== null && idx !== indiceActivo) {
-      setUltimoIndice(indiceActivo);
-      localStorage.setItem("ultimoIndice", indiceActivo.toString());
+  useEffect(() => {
+    if (ultimoIndice !== null) {
+      localStorage.setItem("ultimoIndice", ultimoIndice.toString());
     }
-    setIndiceActivo(idx);
-  }
+  }, [ultimoIndice]);
 
+  function manejarSeleccionDia(idx: number | null) {
+    setIndiceActivo(idx);
+    if (idx !== null) {
+      setUltimoIndice(idx);
+    }
+  }
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 font-sans p-4">
       <header className="py-6 text-center">
@@ -38,11 +42,13 @@ const App = () => {
         <p className="text-slate-500 text-sm mt-1">
           Rutina de {state.length} sesiones a lo largo de 2 semanas
         </p>
-        {!indiceActivo && (ultimoIndice || ultimoIndice === 0) && (
-          <p className="text-slate-500 text-sm mt-1">
-            Último entrenamiento: día {ultimoIndice + 1}
-          </p>
-        )}
+        {!indiceActivo &&
+          indiceActivo !== 0 &&
+          (ultimoIndice || ultimoIndice === 0) && (
+            <p className="text-slate-500 text-sm mt-1">
+              Último entrenamiento: día {ultimoIndice + 1}
+            </p>
+          )}
       </header>
 
       <main className="max-w-md mx-auto">
