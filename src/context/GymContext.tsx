@@ -1,4 +1,4 @@
-import { createContext, useReducer, useEffect, useContext } from "react";
+import { createContext, useReducer, useEffect } from "react";
 import {
   entrenamientoReducer,
   type seleccionAction,
