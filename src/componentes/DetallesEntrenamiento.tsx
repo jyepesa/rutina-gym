@@ -6,7 +6,8 @@ export const DetallesEntrenamiento = ({
 }: {
   diaIndex: number | null;
 }) => {
-  const { state, dispatch } = useGym();
+  // Extraemos TODO del contexto, incluyendo nuestra nueva función syncRecord
+  const { state, dispatch, syncRecord } = useGym();
   const [mostrandoCheck, setMostrandoCheck] = useState(false);
 
   useEffect(() => {
@@ -27,9 +28,20 @@ export const DetallesEntrenamiento = ({
 
   const diaSeleccionado = state[diaIndex];
 
+  // La nueva función unificada que actualiza la UI y la nube
+  const alCambiarRecord = (valor: string, ejIdx: number) => {
+    dispatch({
+      type: "ACTUALIZAR_RECORD",
+      diaIndex: diaIndex,
+      ejercicioIndex: ejIdx,
+      valor: valor,
+    });
+    // Guardado en la nube
+    syncRecord(diaIndex, ejIdx, valor);
+  };
+
   return (
     <div className="mt-6">
-      {/* Título del día */}
       <div className="mb-6">
         <h2 className="text-sm uppercase tracking-widest text-cyan-500 font-bold">
           Día {diaSeleccionado.dia}
@@ -38,10 +50,9 @@ export const DetallesEntrenamiento = ({
           {diaSeleccionado.blanco}
         </h3>
       </div>
+
       <button
-        onClick={() => {
-          dispatch({ type: "RESET_DIA", diaIndex: diaIndex });
-        }}
+        onClick={() => dispatch({ type: "RESET_DIA", diaIndex: diaIndex })}
         className="mb-6 w-full py-3 px-4 rounded-xl border border-slate-700 bg-slate-900/50 text-slate-400 text-sm font-bold uppercase tracking-widest hover:bg-slate-800 active:scale-95 transition-all flex items-center justify-center gap-2"
       >
         <span className="text-lg">🔄</span> Reiniciar progreso del día
@@ -53,21 +64,6 @@ export const DetallesEntrenamiento = ({
             <span className="text-[10px] font-black uppercase tracking-widest">
               Cambios guardados
             </span>
-            <div className="w-4 h-4 bg-cyan-500 rounded-full flex items-center justify-center">
-              <svg
-                className="w-3 h-3 text-slate-950"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={4}
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
-            </div>
           </div>
         )}
       </div>
@@ -76,6 +72,7 @@ export const DetallesEntrenamiento = ({
         {diaSeleccionado.ejercicios.map((ejercicio, index) => (
           <li
             key={"ex" + index}
+            // ESTA ES LA FUNCIÓN QUE ABRE EL ACORDEÓN (No la borres)
             onClick={() =>
               dispatch({
                 type: "TOGGLE_SELECCIONAR",
@@ -116,16 +113,9 @@ export const DetallesEntrenamiento = ({
                     </label>
                     <input
                       type="text"
-                      value={ejercicio.intensidad.record}
-                      onClick={(e) => e.stopPropagation()}
-                      onChange={(e) =>
-                        dispatch({
-                          type: "ACTUALIZAR_RECORD",
-                          diaIndex: diaIndex!,
-                          ejercicioIndex: index,
-                          valor: e.target.value,
-                        })
-                      }
+                      value={ejercicio.intensidad.record || ""}
+                      onClick={(e) => e.stopPropagation()} // Evita que al hacer click en el input se cierre el acordeón
+                      onChange={(e) => alCambiarRecord(e.target.value, index)}
                       placeholder="Ej: 15kg - Técnica sólida"
                       className="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-cyan-400 font-bold focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 outline-none transition-all"
                     />

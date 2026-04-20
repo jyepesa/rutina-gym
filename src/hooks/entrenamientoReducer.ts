@@ -10,6 +10,7 @@ export type seleccionAction =
       diaIndex: number;
       ejercicioIndex: number;
       valor: string;
+      skipSync?: boolean;
     };
 
 export function entrenamientoReducer(
