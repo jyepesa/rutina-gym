@@ -18,7 +18,7 @@ export const SelectorDia = ({
             <button
               key={index}
               onClick={() => alSeleccionar(index)}
-              className={`font-bold py-3 rounded-xl border transition-all active:scale-90 ${
+              className={`font-bold py-3 rounded-xl border transition-all active:scale-90 cursor-pointer ${
                 indiceSeleccionado
                   ? "bg-cyan-600 border-cyan-400 text-white shadow-[0_0_15px_rgba(34,211,238,0.4)]"
                   : "bg-slate-800 border-slate-700 text-slate-400"
