@@ -4,6 +4,7 @@ const rutinaCiclo2 = [
     blanco: "Empuje Horizontal y Cadena Posterior",
     ejercicios: [
       {
+        id: "d1-press-banca",
         ejercicio: "Press de Banca con Barra o Mancuernas",
         series: 2,
         intensidad: {
@@ -16,6 +17,7 @@ const rutinaCiclo2 = [
         seleccionado: false,
       },
       {
+        id: "d1-rdl",
         ejercicio: "Peso Muerto Rumano (RDL)",
         series: 2,
         intensidad: {
@@ -28,6 +30,7 @@ const rutinaCiclo2 = [
         seleccionado: false,
       },
       {
+        id: "d1-dominadas-asistidas",
         ejercicio: "Dominadas Asistidas (Agarre Neutro)",
         series: 2,
         intensidad: {
@@ -40,6 +43,7 @@ const rutinaCiclo2 = [
         seleccionado: false,
       },
       {
+        id: "d1-leg-press",
         ejercicio: "Leg Press o Prensa Péndulo (A DOS PIERNAS)",
         series: 2,
         intensidad: {
@@ -52,6 +56,7 @@ const rutinaCiclo2 = [
         seleccionado: false,
       },
       {
+        id: "d1-glute-bridge-unilateral",
         ejercicio: "Puente Glúteo UNILATERAL (Single-Leg Glute Bridge)",
         series: 2,
         intensidad: {
@@ -64,6 +69,7 @@ const rutinaCiclo2 = [
         seleccionado: false,
       },
       {
+        id: "d1-curl-biceps-inclinado",
         ejercicio: "Curl de Bíceps Inclinado",
         series: 2,
         intensidad: {
@@ -76,6 +82,7 @@ const rutinaCiclo2 = [
         seleccionado: false,
       },
       {
+        id: "d1-farmers-walk",
         ejercicio: "Farmer's Walk (Caminata del Granjero)",
         series: 2,
         intensidad: {
@@ -94,6 +101,7 @@ const rutinaCiclo2 = [
     blanco: "Empuje Vertical y Hip Thrust",
     ejercicios: [
       {
+        id: "d2-hip-thrust",
         ejercicio: "Hip Thrust en Máquina Específica",
         series: 2,
         intensidad: {
@@ -106,6 +114,7 @@ const rutinaCiclo2 = [
         seleccionado: false,
       },
       {
+        id: "d2-press-arnold",
         ejercicio: "Press Arnold (Sentado)",
         series: 2,
         intensidad: {
@@ -118,6 +127,7 @@ const rutinaCiclo2 = [
         seleccionado: false,
       },
       {
+        id: "d2-remo-mancuerna",
         ejercicio: "Remo con Mancuerna (a una mano)",
         series: 2,
         intensidad: {
@@ -130,6 +140,7 @@ const rutinaCiclo2 = [
         seleccionado: false,
       },
       {
+        id: "d2-wall-sit",
         ejercicio: "Sentadilla a Pared Isométrica (Wall Sit)",
         series: 2,
         intensidad: {
@@ -142,6 +153,7 @@ const rutinaCiclo2 = [
         seleccionado: false,
       },
       {
+        id: "d2-hip-abduction-lateral",
         ejercicio: "Elevación Lateral de Pierna (Side-Lying Hip Abduction)",
         series: 2,
         intensidad: {
@@ -154,6 +166,7 @@ const rutinaCiclo2 = [
         seleccionado: false,
       },
       {
+        id: "d2-press-frances",
         ejercicio: "Press Francés con Mancuerna (Tumbado)",
         series: 2,
         intensidad: {
@@ -166,6 +179,7 @@ const rutinaCiclo2 = [
         seleccionado: false,
       },
       {
+        id: "d2-pallof-press",
         ejercicio: "Pallof Press (de pie o arrodillado)",
         series: 2,
         intensidad: {
@@ -184,6 +198,7 @@ const rutinaCiclo2 = [
     blanco: "Inclinado y Estabilidad Core",
     ejercicios: [
       {
+        id: "d3-press-inclinado",
         ejercicio: "Press Inclinado con Barra o Mancuernas",
         series: 2,
         intensidad: {
@@ -196,6 +211,7 @@ const rutinaCiclo2 = [
         seleccionado: false,
       },
       {
+        id: "d3-jalones-pecho",
         ejercicio: "Jalones al Pecho (Agarre Prono/Ancho)",
         series: 2,
         intensidad: {
@@ -208,6 +224,7 @@ const rutinaCiclo2 = [
         seleccionado: false,
       },
       {
+        id: "d3-rdl",
         ejercicio: "RDL (Con Mancuernas o Barra Ligeras)",
         series: 2,
         intensidad: {
@@ -220,6 +237,7 @@ const rutinaCiclo2 = [
         seleccionado: false,
       },
       {
+        id: "d3-patrick-step-down",
         ejercicio: "Patrick Step-Down",
         series: 2,
         intensidad: {
@@ -232,6 +250,7 @@ const rutinaCiclo2 = [
         seleccionado: false,
       },
       {
+        id: "d3-abduccion-cadera",
         ejercicio: "Máquina Abducción de Cadera (Sentado)",
         series: 2,
         intensidad: {
@@ -244,6 +263,7 @@ const rutinaCiclo2 = [
         seleccionado: false,
       },
       {
+        id: "d3-elevaciones-laterales",
         ejercicio: "Elevaciones Laterales con Mancuernas (Inclinado)",
         series: 2,
         intensidad: {
@@ -256,6 +276,7 @@ const rutinaCiclo2 = [
         seleccionado: false,
       },
       {
+        id: "d3-dead-bug",
         ejercicio: "Dead Bug (Bicho Muerto)",
         series: 2,
         intensidad: {
@@ -274,6 +295,7 @@ const rutinaCiclo2 = [
     blanco: "Rotación y Patrones de Cable",
     ejercicios: [
       {
+        id: "d4-dips",
         ejercicio: "Dips Asistidos o Máquina Dips",
         series: 2,
         intensidad: {
@@ -286,6 +308,7 @@ const rutinaCiclo2 = [
         seleccionado: false,
       },
       {
+        id: "d4-remo-sentado",
         ejercicio: "Remo Sentado (Cable Agarre Neutro)",
         series: 2,
         intensidad: {
@@ -298,6 +321,7 @@ const rutinaCiclo2 = [
         seleccionado: false,
       },
       {
+        id: "d4-hip-thrust-rehit",
         ejercicio: "Hip Thrust en Máquina Específica (Re-hit)",
         series: 2,
         intensidad: {
@@ -310,6 +334,7 @@ const rutinaCiclo2 = [
         seleccionado: false,
       },
       {
+        id: "d4-leg-extension",
         ejercicio: "Leg Extension (Máquina)",
         series: 2,
         intensidad: {
@@ -322,6 +347,7 @@ const rutinaCiclo2 = [
         seleccionado: false,
       },
       {
+        id: "d4-hip-abduction-rehit",
         ejercicio: "Elevación Lateral de Pierna (Re-hit)",
         series: 2,
         intensidad: {
@@ -334,6 +360,7 @@ const rutinaCiclo2 = [
         seleccionado: false,
       },
       {
+        id: "d4-curl-martillo",
         ejercicio: "Curl Martillo (Mancuerna)",
         series: 2,
         intensidad: {
@@ -346,6 +373,7 @@ const rutinaCiclo2 = [
         seleccionado: false,
       },
       {
+        id: "d4-cable-chop",
         ejercicio: "Cable Anti-Rotación (Cable Chop)",
         series: 2,
         intensidad: {
@@ -364,6 +392,7 @@ const rutinaCiclo2 = [
     blanco: "Fuerza Pura y Hombro Posterior",
     ejercicios: [
       {
+        id: "d5-press-banca-rehit",
         ejercicio: "Press de Banca con Barra o Mancuernas (Re-hit)",
         series: 2,
         intensidad: {
@@ -376,6 +405,7 @@ const rutinaCiclo2 = [
         seleccionado: false,
       },
       {
+        id: "d5-jalones-pecho-rehit",
         ejercicio: "Jalones al Pecho (Agarre Neutro)",
         series: 2,
         intensidad: {
@@ -388,6 +418,7 @@ const rutinaCiclo2 = [
         seleccionado: false,
       },
       {
+        id: "d5-rdl-rehit",
         ejercicio: "Peso Muerto Rumano (RDL) (Re-hit)",
         series: 2,
         intensidad: {
@@ -400,6 +431,7 @@ const rutinaCiclo2 = [
         seleccionado: false,
       },
       {
+        id: "d5-wall-sit-rehit",
         ejercicio: "Sentadilla a Pared Isométrica (Wall Sit) (Re-hit)",
         series: 2,
         intensidad: {
@@ -412,6 +444,7 @@ const rutinaCiclo2 = [
         seleccionado: false,
       },
       {
+        id: "d5-glute-bridge-unilateral-rehit",
         ejercicio: "Puente Glúteo UNILATERAL (Re-hit)",
         series: 2,
         intensidad: {
@@ -424,6 +457,7 @@ const rutinaCiclo2 = [
         seleccionado: false,
       },
       {
+        id: "d5-extension-triceps-polea",
         ejercicio: "Extensión Tríceps Polea",
         series: 2,
         intensidad: {
@@ -436,6 +470,7 @@ const rutinaCiclo2 = [
         seleccionado: false,
       },
       {
+        id: "d5-farmers-walk-rehit",
         ejercicio: "Farmer's Walk (Caminata del Granjero) (Re-hit)",
         series: 2,
         intensidad: {
@@ -454,6 +489,7 @@ const rutinaCiclo2 = [
     blanco: "Aislamiento y Unilateral",
     ejercicios: [
       {
+        id: "d6-press-inclinado-rehit",
         ejercicio: "Press Inclinado (Re-hit)",
         series: 2,
         intensidad: {
@@ -466,6 +502,7 @@ const rutinaCiclo2 = [
         seleccionado: false,
       },
       {
+        id: "d6-remo-mancuerna-rehit",
         ejercicio: "Remo con Mancuerna (a una mano) (Re-hit)",
         series: 2,
         intensidad: {
@@ -478,6 +515,7 @@ const rutinaCiclo2 = [
         seleccionado: false,
       },
       {
+        id: "d6-hip-thrust-rehit-2",
         ejercicio: "Hip Thrust en Máquina Específica (Re-hit)",
         series: 2,
         intensidad: {
@@ -490,6 +528,7 @@ const rutinaCiclo2 = [
         seleccionado: false,
       },
       {
+        id: "d6-patrick-step-down-rehit",
         ejercicio: "Patrick Step-Down (Re-hit)",
         series: 2,
         intensidad: {
@@ -502,6 +541,7 @@ const rutinaCiclo2 = [
         seleccionado: false,
       },
       {
+        id: "d6-peck-deck-inverso",
         ejercicio: "Hombro: Aperturas (Fly) en Peck Deck Inverso",
         series: 2,
         intensidad: {
@@ -514,6 +554,7 @@ const rutinaCiclo2 = [
         seleccionado: false,
       },
       {
+        id: "d6-aperturas-pecho-mancuerna",
         ejercicio: "Aperturas con Mancuerna (Pecho)",
         series: 2,
         intensidad: {
@@ -526,6 +567,7 @@ const rutinaCiclo2 = [
         seleccionado: false,
       },
       {
+        id: "d6-pallof-press-rehit",
         ejercicio: "Pallof Press (Re-hit)",
         series: 2,
         intensidad: {
@@ -544,6 +586,7 @@ const rutinaCiclo2 = [
     blanco: "Mixta y Superseries Rápida",
     ejercicios: [
       {
+        id: "d7-press-hombro-maquina",
         ejercicio: "Press de Hombro en Máquina (Sentado)",
         series: 2,
         intensidad: {
@@ -556,6 +599,7 @@ const rutinaCiclo2 = [
         seleccionado: false,
       },
       {
+        id: "d7-pullover-polea",
         ejercicio: "Pull-over en Polea (Cuerda/Barra)",
         series: 2,
         intensidad: {
@@ -568,6 +612,7 @@ const rutinaCiclo2 = [
         seleccionado: false,
       },
       {
+        id: "d7-rdl-rehit-2",
         ejercicio: "Peso Muerto Rumano (RDL) (Re-hit)",
         series: 2,
         intensidad: {
@@ -580,6 +625,7 @@ const rutinaCiclo2 = [
         seleccionado: false,
       },
       {
+        id: "d7-leg-press-rehit",
         ejercicio: "Leg Press (Re-hit - Posición Estrecha)",
         series: 2,
         intensidad: {
@@ -592,6 +638,7 @@ const rutinaCiclo2 = [
         seleccionado: false,
       },
       {
+        id: "d7-abduccion-cadera-rehit",
         ejercicio: "Máquina Abducción de Cadera (Re-hit)",
         series: 2,
         intensidad: {
@@ -604,6 +651,7 @@ const rutinaCiclo2 = [
         seleccionado: false,
       },
       {
+        id: "d7-superset-brazos",
         ejercicio: "Superset: Curl Bíceps + Extensión Tríceps",
         series: 2,
         intensidad: {
@@ -616,6 +664,7 @@ const rutinaCiclo2 = [
         seleccionado: false,
       },
       {
+        id: "d7-dead-bug-rehit",
         ejercicio: "Dead Bug (Bicho Muerto) (Re-hit)",
         series: 2,
         intensidad: {

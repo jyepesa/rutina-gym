@@ -6,6 +6,12 @@ export type seleccionAction =
   | { type: "RESET_TODO" }
   | { type: "AGREGAR_EJERCICIO"; diaIndex: number; ejercicio: Ejercicio }
   | {
+      type: "ACTUALIZAR_RECORD_POR_ID";
+      id: string;
+      valor: string;
+      skipSync?: boolean;
+    }
+  | {
       type: "ACTUALIZAR_RECORD";
       diaIndex: number;
       ejercicioIndex: number;
@@ -81,6 +87,30 @@ export function entrenamientoReducer(
       dia.ejercicios = ejercicios;
       nuevoState[diaIndex] = dia;
       return nuevoState;
+    }
+    case "ACTUALIZAR_RECORD_POR_ID": {
+      const stateConIds = [...state];
+      // Buscamos en todos los días...
+      for (let d = 0; d < stateConIds.length; d++) {
+        // ...hasta encontrar el ejercicio con el ID exacto
+        const ejIndex = stateConIds[d].ejercicios.findIndex(
+          (e: any) => e.id === action.id,
+        );
+        if (ejIndex !== -1) {
+          // ¡Lo encontramos! Actualizamos su récord
+          const ejerciciosClon = [...stateConIds[d].ejercicios];
+          ejerciciosClon[ejIndex] = {
+            ...ejerciciosClon[ejIndex],
+            intensidad: {
+              ...ejerciciosClon[ejIndex].intensidad,
+              record: action.valor,
+            },
+          };
+          stateConIds[d] = { ...stateConIds[d], ejercicios: ejerciciosClon };
+          break; // Detenemos la búsqueda por pura eficiencia lógica
+        }
+      }
+      return stateConIds;
     }
 
     default:

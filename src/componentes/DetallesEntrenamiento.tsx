@@ -29,15 +29,9 @@ export const DetallesEntrenamiento = ({
   const diaSeleccionado = state[diaIndex];
 
   // La nueva función unificada que actualiza la UI y la nube
-  const alCambiarRecord = (valor: string, ejIdx: number) => {
-    dispatch({
-      type: "ACTUALIZAR_RECORD",
-      diaIndex: diaIndex,
-      ejercicioIndex: ejIdx,
-      valor: valor,
-    });
-    // Guardado en la nube
-    syncRecord(diaIndex, ejIdx, valor);
+  const alCambiarRecord = (idUnico: string, valor: string) => {
+    dispatch({ type: "ACTUALIZAR_RECORD_POR_ID", id: idUnico, valor: valor });
+    syncRecord(idUnico, valor);
   };
 
   return (
@@ -115,7 +109,9 @@ export const DetallesEntrenamiento = ({
                       type="text"
                       value={ejercicio.intensidad.record || ""}
                       onClick={(e) => e.stopPropagation()} // Evita que al hacer click en el input se cierre el acordeón
-                      onChange={(e) => alCambiarRecord(e.target.value, index)}
+                      onChange={(e) =>
+                        alCambiarRecord(ejercicio.id, e.target.value)
+                      }
                       placeholder="Ej: 15kg - Técnica sólida"
                       className="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-cyan-400 font-bold focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 outline-none transition-all"
                     />

@@ -1,4 +1,5 @@
 export interface Ejercicio {
+  id: string;
   ejercicio: string;
   series: string | number;
   intensidad: { tipo: string; serie: string; record: string };
