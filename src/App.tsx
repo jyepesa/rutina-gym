@@ -111,7 +111,7 @@ export default function App() {
           />
           <button
             type="submit"
-            className="w-full bg-cyan-600 font-bold p-3 rounded"
+            className="w-full bg-cyan-600 font-bold p-3 rounded text-slate-100 hover:bg-cyan-500 transition-colors"
           >
             Entrar
           </button>
